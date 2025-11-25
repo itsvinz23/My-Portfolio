@@ -138,35 +138,36 @@
               <h3>Get In Touch</h3>
               <p>Have a question or want to start a project? Send me a message below — I reply fast.</p>
 
-              <form action="/api/contact" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form id="contact-form" action="/api/contact" method="POST">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                   </div>
 
-                  <div class="col-md-6 ">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                  </div>
-
-                  <div class="col-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <div class="col-md-6">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                   </div>
 
                   <div class="col-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                  </div>
+
+                  <div class="col-12">
+                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
                   </div>
 
                   <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                    <div class="loading" style="display:none;">Loading</div>
+                    <div class="error-message" style="display:none;"></div>
+                    <div class="sent-message" style="display:none;">Your message has been sent. Thank you!</div>
 
                     <button type="submit" class="btn">Send Message</button>
                   </div>
 
                 </div>
               </form>
+
 
             </div>
           </div>
@@ -219,7 +220,47 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  
+  <script>
+    const form = document.getElementById("contact-form");
 
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const loading = document.querySelector(".loading");
+      const errorMsg = document.querySelector(".error-message");
+      const sentMsg = document.querySelector(".sent-message");
+
+      loading.style.display = "block";
+      errorMsg.style.display = "none";
+      sentMsg.style.display = "none";
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          body: formData
+        });
+
+        const text = await res.text();
+
+        loading.style.display = "none";
+
+        if (text.trim() === "OK") {
+          sentMsg.style.display = "block";
+          form.reset();
+        } else {
+          errorMsg.innerText = "Something went wrong!";
+          errorMsg.style.display = "block";
+        }
+      } catch (err) {
+        loading.style.display = "none";
+        errorMsg.innerText = "Unable to send message!";
+        errorMsg.style.display = "block";
+      }
+    });
+  </script>
 </body>
 
 </html>
