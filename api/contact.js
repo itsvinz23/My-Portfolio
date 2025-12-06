@@ -1,24 +1,29 @@
+import { IncomingForm } from "formidable";
+
 export const config = {
   api: {
-    bodyParser: {
-      sizeLimit: "1mb",
-    },
+    bodyParser: false,
   },
 };
 
 export default function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Only POST requests allowed" });
+    return res.status(405).send("Only POST allowed");
   }
 
-  const name = req.body.name || "";
-  const email = req.body.email || "";
-  const subject = req.body.subject || "";
-  const message = req.body.message || "";
+  const form = new IncomingForm();
 
-  console.log("📩 New Contact Form Message:");
-  console.log({ name, email, subject, message });
+  form.parse(req, (err, fields, files) => {
+    if (err) {
+      console.error("Form parse error:", err);
+      return res.status(500).send("Error parsing form");
+    }
 
-  // REQUIRED: Template expects this exact text
-  return res.status(200).send("OK");
+    const { name, email, subject, message } = fields;
+
+    console.log("📩 NEW MESSAGE:", { name, email, subject, message });
+
+    // MUST return this exact response for template to show "sent-message"
+    return res.status(200).send("OK");
+  });
 }
