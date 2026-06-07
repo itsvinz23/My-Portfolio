@@ -2847,9 +2847,44 @@ section,
   background-color: color-mix(in srgb, var(--surface-color), transparent 70%);
 }
 
+
+.role-icons {
+  margin-top: 20px;
+}
+
+.role-item {
+  text-align: center;
+}
+
+.role-item img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00aaff;
+  padding: 5px;
+  background: #071217;
+  transition: 0.3s ease;
+}
+
+.role-item span {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.role-item:hover img {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 0 18px rgba(0, 170, 255, 0.6);
+}
+
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
 }
+
