@@ -303,13 +303,17 @@
 
     </section><!-- /Skills Section -->
 
+    
     <!-- Stats Section -->
-    <section id="stats" class="stats section dark-background">
+<section id="stats" class="stats section dark-background">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="role-icons d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap">
+    <div class="row align-items-center gy-5">
+
+      <!-- Roles -->
+      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="role-grid">
 
           <div class="role-item">
             <img src="assets/img/ico/coding.png" alt="Developer">
@@ -334,163 +338,214 @@
         </div>
       </div>
 
-          <div class="col-lg-8">
-            <div class="row counters">
-              <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <h2><span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>+</h2>
-                <p>Projects</p>
+      <!-- Statistics -->
+      <div class="col-lg-7">
+        <div class="row counters stats-box">
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <h2><span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>+</h2>
+            <p>Software Projects</p>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <h2><span data-purecounter-start="0" data-purecounter-end="395" data-purecounter-duration="1" class="purecounter"></span>K+</h2>
+            <p>Social Reach</p>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <h2><span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>+</h2>
+            <p>Creative Works</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /Stats Section -->
+
+    
+ 
+<!-- Learning Section -->
+<section id="learning" class="learning section">
+
+  <div class="container section-title" data-aos="fade-up">
+    <h2>What I'm Learning & Exploring</h2>
+    <p>Technologies, creative skills, and tools I’m improving while growing as a developer and creator.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper learning-swiper">
+
+      <button class="learning-toggle" id="learningToggle" type="button" aria-label="Pause slider">
+        <i class="bi bi-pause-fill"></i>
+      </button>
+
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 700,
+          "autoplay": {
+            "delay": 5000,
+            "disableOnInteraction": false
+          },
+          "slidesPerView": 1,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          }
+        }
+      </script>
+
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="learning-item">
+            <div class="mesh-orb orb-one"></div>
+            <div class="mesh-orb orb-two"></div>
+
+            <div class="row gy-4 justify-content-center align-items-center">
+              <div class="col-lg-7">
+                <div class="learning-content">
+                  <p>Learning to build modern web applications, REST APIs, authentication systems, and scalable backend solutions. Exploring industry practices used in enterprise software development.</p>
+                  <h3>ASP.NET Core & C#</h3>
+                  <h4>Software Development</h4>
+                  <span class="learning-level">Actively Learning</span>
+                </div>
               </div>
 
-              <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                <h2><span data-purecounter-start="0" data-purecounter-end="395" data-purecounter-duration="1" class="purecounter"></span>K+</h2>
-                <p>Total reach across social platforms</p>
-              </div>
-
-              <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
-                <h2><span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>+</h2>
-                <p>Completed projects,edits, and creative works.</p>
+              <div class="col-lg-3 text-center">
+                <i class="bi bi-code-slash learning-icon"></i>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-    </section><!-- /Stats Section -->
+        <div class="swiper-slide">
+          <div class="learning-item">
+            <div class="mesh-orb orb-one"></div>
+            <div class="mesh-orb orb-two"></div>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Saul Goodman</h3>
-                      <h4>Ceo &amp; Founder</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/person/person-m-9.webp" class="img-fluid testimonial-img" alt="">
-                  </div>
+            <div class="row gy-4 justify-content-center align-items-center">
+              <div class="col-lg-7">
+                <div class="learning-content">
+                  <p>Creating clean interfaces, user flows, wireframes, and visually appealing layouts. Focusing on better user experience, responsive design, and modern portfolio-style UI.</p>
+                  <h3>UI/UX Design</h3>
+                  <h4>Design & Prototyping</h4>
+                  <span class="learning-level">Improving</span>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Sara Wilsson</h3>
-                      <h4>Designer</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/person/person-f-5.webp" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
+              <div class="col-lg-3 text-center">
+                <i class="bi bi-palette learning-icon"></i>
               </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Jena Karlis</h3>
-                      <h4>Store Owner</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/person/person-f-12.webp" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/person/person-m-12.webp" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
+            </div>
           </div>
-          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="learning-item">
+            <div class="mesh-orb orb-one"></div>
+            <div class="mesh-orb orb-two"></div>
+
+            <div class="row gy-4 justify-content-center align-items-center">
+              <div class="col-lg-7">
+                <div class="learning-content">
+                  <p>Building smart devices using Arduino, sensors, automation, and connected systems. Exploring real-world IoT projects with Firebase, robotics, and embedded logic.</p>
+                  <h3>Arduino & IoT</h3>
+                  <h4>Embedded Systems</h4>
+                  <span class="learning-level">Project Based</span>
+                </div>
+              </div>
+
+              <div class="col-lg-3 text-center">
+                <i class="bi bi-cpu learning-icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="learning-item">
+            <div class="mesh-orb orb-one"></div>
+            <div class="mesh-orb orb-two"></div>
+
+            <div class="row gy-4 justify-content-center align-items-center">
+              <div class="col-lg-7">
+                <div class="learning-content">
+                  <p>Exploring AI-assisted coding, automation tools, prompt engineering, and fast prototyping workflows. Using AI to improve productivity, ideas, and problem solving.</p>
+                  <h3>AI Tools & Vibe Coding</h3>
+                  <h4>Artificial Intelligence</h4>
+                  <span class="learning-level">Exploring</span>
+                </div>
+              </div>
+
+              <div class="col-lg-3 text-center">
+                <i class="bi bi-stars learning-icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="learning-item">
+            <div class="mesh-orb orb-one"></div>
+            <div class="mesh-orb orb-two"></div>
+
+            <div class="row gy-4 justify-content-center align-items-center">
+              <div class="col-lg-7">
+                <div class="learning-content">
+                  <p>Improving audio quality through mixing, mastering, vocal balance, and sound refinement. Working on cleaner music production and better final output for tracks.</p>
+                  <h3>Music Mixing & Mastering</h3>
+                  <h4>Audio Production</h4>
+                  <span class="learning-level">Creative Skill</span>
+                </div>
+              </div>
+
+              <div class="col-lg-3 text-center">
+                <i class="bi bi-music-note-beamed learning-icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="learning-item">
+            <div class="mesh-orb orb-one"></div>
+            <div class="mesh-orb orb-two"></div>
+
+            <div class="row gy-4 justify-content-center align-items-center">
+              <div class="col-lg-7">
+                <div class="learning-content">
+                  <p>Creating better edits, motion graphics, transitions, color grading, and cinematic visual content. Improving storytelling for social media and creative branding.</p>
+                  <h3>Video Editing & Motion Design</h3>
+                  <h4>Creative Media</h4>
+                  <span class="learning-level">Leveling Up</span>
+                </div>
+              </div>
+
+              <div class="col-lg-3 text-center">
+                <i class="bi bi-camera-reels learning-icon"></i>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
 
-    </section><!-- /Testimonials Section -->
+      <div class="swiper-pagination"></div>
 
-  </main>
+    </div>
+
+  </div>
+
+</section><!-- /Learning Section -->
+ 
+</main>
   
   <footer id="footer" class="footer">
 

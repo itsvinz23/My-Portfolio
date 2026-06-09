@@ -202,3 +202,81 @@
   });
 
 })();
+
+
+
+
+/**
+   * About page - Learning section - Play/pause toggle for autoplay
+   */
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById("learningToggle");
+
+  if (toggleBtn) {
+    let isPlaying = true;
+
+    toggleBtn.addEventListener("click", function () {
+      const learningSwiperEl = document.querySelector("#learning .swiper");
+
+      if (!learningSwiperEl || !learningSwiperEl.swiper) return;
+
+      if (isPlaying) {
+        learningSwiperEl.swiper.autoplay.stop();
+        toggleBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+        isPlaying = false;
+      } else {
+        learningSwiperEl.swiper.autoplay.start();
+        toggleBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+        isPlaying = true;
+      }
+    });
+  }
+});
+
+
+/**
+    * About page - Learning section - Parallax effect on cards
+   */
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleBtn = document.getElementById("learningToggle");
+  const learningSwiperEl = document.querySelector("#learning .swiper");
+
+  if (toggleBtn && learningSwiperEl) {
+    let isPlaying = true;
+
+    toggleBtn.addEventListener("click", function () {
+      if (!learningSwiperEl.swiper) return;
+
+      if (isPlaying) {
+        learningSwiperEl.swiper.autoplay.stop();
+        toggleBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+        toggleBtn.setAttribute("aria-label", "Play slider");
+        isPlaying = false;
+      } else {
+        learningSwiperEl.swiper.autoplay.start();
+        toggleBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+        toggleBtn.setAttribute("aria-label", "Pause slider");
+        isPlaying = true;
+      }
+    });
+  }
+
+  document.querySelectorAll(".learning-item").forEach((card) => {
+    card.addEventListener("mousemove", function (e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      card.querySelectorAll(".mesh-orb").forEach((orb, index) => {
+        const speed = index === 0 ? 0.04 : -0.03;
+        orb.style.transform = `translate(${(x - rect.width / 2) * speed}px, ${(y - rect.height / 2) * speed}px)`;
+      });
+    });
+
+    card.addEventListener("mouseleave", function () {
+      card.querySelectorAll(".mesh-orb").forEach((orb) => {
+        orb.style.transform = "translate(0, 0)";
+      });
+    });
+  });
+});
